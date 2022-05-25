@@ -8,7 +8,6 @@ const List = () => {
   const [nextPage, setNextPage] = useState("");
 
   const getGames = (reqType) => {
-    console.log(reqType);
     if (reqType === "first") {
       axios
         .get(
@@ -17,13 +16,11 @@ const List = () => {
         .then((res) => {
           setGames(res.data.results);
           setNextPage(res.data.next);
-          console.log(res.data.results);
         });
     } else {
       axios.get(nextPage).then((res) => {
         setGames(games.concat(res.data.results));
         setNextPage(res.data.next);
-        console.log("loaded count");
       });
     }
   };
