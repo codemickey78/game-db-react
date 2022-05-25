@@ -34,7 +34,7 @@ const List = () => {
   return (
     <>
       <div className="w-full pb-5">
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 xs:grid-cols-1 sm:grid-cols-2 gap-6 ">
           {games.map((game) => (
             <React.Fragment key={game.name}>
               <GameCard game={game} />
